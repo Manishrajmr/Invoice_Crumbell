@@ -3,11 +3,10 @@ import React from 'react';
 const notes = () => {
   return (
     <div>
-      <section className="mb-5">
+      <section className="">
         {/* text area */}
-        <p className="my-14 ">Thank you for your purchase! We hope you are delighted with our bakery products. If you have any questions or need further assistance, please feel free to contact us.</p>
+        <p className="my-5 ">Thank you for your purchase! For any queries or need further assistance, please feel free to contact us.</p>
 
-      
       </section>
     </div>
   );

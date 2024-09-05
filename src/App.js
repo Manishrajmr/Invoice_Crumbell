@@ -6,6 +6,7 @@ import Dates from "./components/Dates"
 import Table from "./components/Table"
 import Notes from "./components/Notes"
 import Footer from "./components/Footer"
+import TopHeader from "./components/TopHeader"
 
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
       <main className="m-5 p-5 xl:max-w-4xl xl:mx-auto bg-white rounded shadow ">
 
          <div>
+          <TopHeader/>
+
           <Header />
 
           <MainDetails />

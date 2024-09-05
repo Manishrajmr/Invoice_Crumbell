@@ -1,16 +1,20 @@
-import React from 'react';
-import logo from "../image/logo.png";
+
+import React, { useState } from 'react';
 
 const Header = () => {
-
+    const [isPrinting, setIsPrinting] = useState(false); // State to manage header visibility during printing
 
     // Function to handle print functionality
     const handlePrint = () => {
-        window.print();
+        setIsPrinting(true); // Hide header before printing
+        setTimeout(() => {
+            window.print(); // Print
+            setIsPrinting(false); // Show header after printing is done
+        }, 100); // Small delay to ensure print dialog opens first
     };
 
     // Function to handle download functionality
-    const handleDownload = (url) => {
+    const handleDownload = () => {
         const fileUrl = 'https://localhost:3000/Invoice_Crumbell/invoice.pdf'; // URL to the file you want to download
         const link = document.createElement('a');
         link.href = fileUrl;
@@ -19,8 +23,6 @@ const Header = () => {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-
-
     };
 
     // Function to handle share functionality
@@ -50,12 +52,10 @@ const Header = () => {
 
     return (
         <div>
-            <header className="flex items-center justify-center mb-7 py-2 gap-5 bg-black">
-                <img className="w-14 h-14 rounded-full" src={logo} alt="Logo"></img>
-                <h1 className="font-bold text-white text-2xl">CRUMBELL</h1>
-            </header>
-
-            <header className="flex flex-col justify-center items-center mb-5 lg:flex-row lg:justify-between lg:items-center px-4 py-6 bg-gray-100 shadow-md rounded-lg">
+            {/* Conditionally hide the header based on the isPrinting state */}
+            <header
+                className={`flex flex-col justify-center items-center mb-5 lg:flex-row lg:justify-between lg:items-center px-4 py-6 bg-gray-100 shadow-md rounded-lg ${isPrinting ? 'hidden' : ''}`}
+            >
                 <h1 className="font-bold uppercase tracking-wide text-4xl mb-3 lg:mb-0 text-gray-800">
                     Invoicer
                 </h1>

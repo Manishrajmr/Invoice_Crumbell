@@ -3,7 +3,7 @@ import React from 'react';
 const Dates = () => {
   return (
     <div>
-      <article className="my-5 flex justify-end items-end  ">
+      <article className="my-1 flex justify-end items-end  ">
         <ul>
           <li><span className="font-bold ">Order number:</span> 5</li>
           <li><span className="font-bold ">Order date:</span> 25/082024</li>

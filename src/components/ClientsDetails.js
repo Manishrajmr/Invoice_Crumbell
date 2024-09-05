@@ -3,7 +3,7 @@ import React from 'react';
 const ClientsDetails = () => {
   return (
     <div>
-      <section className="mt-5 ">
+      <section className="mt-2 ">
           <h2 className="text-xl font-bold uppercase">Client/shop Details</h2>
           <p><strong>Name :</strong> Manish Raj</p>
           <p><strong>Address :</strong> Sasaram, Bihar</p>
